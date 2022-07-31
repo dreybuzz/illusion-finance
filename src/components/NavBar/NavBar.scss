@@ -1,0 +1,49 @@
+@import "./../../assets/sass/variables.scss";
+
+.section-title {
+  font-size: 0.75rem;
+  font-weight: bolder;
+}
+
+.section-title-text {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.nav-item {
+  width: max-content;
+  transition: 0.25s ease-in;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+  border-radius: 0.25em;
+}
+
+#navbar {
+  .material-symbols-outlined {
+    font-size: 1rem;
+  }
+}
+
+.light-mode {
+  .section-title {
+    color: lighten(map-get($colors, accent), 25);
+  }
+
+  .nav-item:hover {
+    background-color: map-get($colors, text);
+    color: map-get($colors, bg);
+  }
+}
+
+.dark-mode {
+  .section-title {
+    color: darken(map-get($darkColors, accent), 10);
+  }
+
+  .nav-item:hover {
+    background-color: map-get($darkColors, accent);
+    color: map-get($darkColors, bg);
+  }
+}

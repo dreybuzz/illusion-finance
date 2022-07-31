@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+@import "./assets/sass/variables.scss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: "Oxygen", sans-serif;
+  background-color: bisque;
+}
+
+::-webkit-scrollbar {
+  width: 0.2em;
+  height: 0.2rem;
+}
+
+header {
+  max-height: 5%;
+  overflow: scroll;
+}
+
+button {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 5px;
+  transition: all 0.25s linear;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  max-width: 0;
+  max-height: 0;
+  transition: 0.55s ease-out;
+}
+
+.shown {
+  max-width: 100%;
+  max-height: 100%;
+  transition: all 0.5s ease-in;
+}
+
+.shadowed {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.cursor {
+  cursor: default;
+}
+
+#root {
+  min-height: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  .light-mode {
+    transition: all 0.25s ease-in-out;
+    background-color: map-get($colors, bg);
+    color: map-get($colors, text);
+
+    button {
+      background-color: map-get($colors, accent);
+      color: map-get($colors, bg);
+    }
+
+    .border-bottom {
+      border-bottom-color: map-get($colors, text) !important;
+    }
+
+    .border {
+      border-color: map-get($colors, text) !important;
+    }
+  }
+
+  .dark-mode {
+    transition: all 0.25s ease-in-out;
+    background-color: map-get($darkColors, bg);
+    color: map-get($darkColors, text);
+
+    button {
+      background-color: map-get($darkColors, accent);
+      color: map-get($darkColors, bg);
+      box-shadow: rgba(157, 157, 255, 0.1) 0px 8px 24px,
+        rgba(14, 14, 14, 0.1) 0px 16px 56px, rgba(0, 0, 0, 0.1) 0px 24px 80px;
+
+      &:hover {
+        background-color: lighten(map-get($darkColors, bg), 5);
+        color: darken(map-get($darkColors, text), 5);
+        box-shadow: none;
+      }
+    }
+  }
+}

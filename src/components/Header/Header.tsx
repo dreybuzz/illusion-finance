@@ -65,7 +65,7 @@ export default function Header({
 
         {/* Theme Switcher */}
         <span
-          className={`material-symbols-outlined fs-1 me-3`}
+          className={`material-symbols-outlined fs-1`}
           onClick={() => toggleTheme()}
           role="button"
           id="theme-toggle">

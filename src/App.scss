@@ -62,6 +62,18 @@ button:hover {
   cursor: default;
 }
 
+.form-select,
+input,
+.form-select:focus,
+input:focus,
+input:active,
+.read-only {
+  border: 0;
+  padding: 1em;
+  outline: none;
+  @extend .shadowed;
+}
+
 #root {
   min-height: 100%;
   max-height: 100%;
@@ -83,6 +95,12 @@ button:hover {
     .border {
       border-color: map-get($colors, text) !important;
     }
+
+    .form-select,
+    input {
+      background-color: map-get($colors, bg);
+      color: map-get($colors, text);
+    }
   }
 
   .dark-mode {
@@ -101,6 +119,12 @@ button:hover {
         color: darken(map-get($darkColors, text), 5);
         box-shadow: none;
       }
+    }
+
+    .form-select,
+    input {
+      background-color: map-get($darkColors, bg);
+      color: map-get($darkColors, text);
     }
   }
 }

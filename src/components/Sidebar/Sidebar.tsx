@@ -14,7 +14,7 @@ export default function Sidebar({ sidebarShown, toggleSidebar }: Sidebar) {
 
   // Sidebar Shown State
   useLayoutEffect(() => {
-    if (width < 767) {
+    if (width < 960) {
       toggleSidebar()
     }
     api("https://ifconfig.me").then((res) => setUserIP(res))

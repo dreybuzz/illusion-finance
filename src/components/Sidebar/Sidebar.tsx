@@ -28,7 +28,7 @@ export default function Sidebar({ sidebarShown, toggleSidebar }: Sidebar) {
       } justify-content-center align-items-center overflow-scroll`}>
       <div className="container-fluid d-flex flex-column p-2 h-100 mh-100">
         {/* Profile Info */}
-        <div className="shadowed p-2 d-flex pointer mb-5">
+        <div className="shadowed p-2 row pointer mb-5 flex-nowrap align-items-center">
           {/* Display Picture */}
           <span className="col-2 p-1">
             <img
@@ -49,7 +49,7 @@ export default function Sidebar({ sidebarShown, toggleSidebar }: Sidebar) {
           {/* Log Out */}
           <span className="col-1 p-1 d-flex align-items-center justify-content-end">
             <span
-              className={`material-symbols-outlined fs-1`}
+              className={`material-symbols-outlined`}
               role="button"
               id="theme-toggle">
               {"logout"}

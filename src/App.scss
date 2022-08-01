@@ -14,8 +14,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0.2em;
-  height: 0.2rem;
+  width: 0rem;
+  height: 0rem;
 }
 
 header {
@@ -60,6 +60,14 @@ button:hover {
 
 .cursor {
   cursor: default;
+}
+
+.zoom-in {
+  transition: all 0.5s ease-in-out;
+}
+
+.zoom-in:hover {
+  transform: scale(1.05);
 }
 
 .form-select,

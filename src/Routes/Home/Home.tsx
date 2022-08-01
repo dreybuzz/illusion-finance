@@ -16,6 +16,7 @@ import {
   Legend,
 } from "chart.js"
 import { Bar } from "react-chartjs-2"
+import Transaction from "../../components/Transaction/Transaction"
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export default function Home() {
@@ -372,28 +373,28 @@ export default function Home() {
   }
 
   return (
-    <div className="container-fluid h-100 py-3 pb-5">
-      <div className="row h-100 justify-content-center gy-5">
+    <div className="container-fluid h-100 p-2">
+      <div className="row h-100 justify-content-center overflow-scroll">
         {/* Left Side */}
-        <div className="col-12 col-lg-10 col-xl-8 p-3">
-          <div className="container-fluid d-flex flex-column justify-content-between">
+        <div className="col-12 col-lg-10 col-xl-8 p-3 h-100 mh-100 overflow-scroll p-3">
+          <div className="container-fluid d-flex flex-column justify-content-between h-100 mh-100 overflow-scroll">
             {/* First Row */}
             <div className="row justify-content-between align-items-center gy-3">
-              <div className="col-12 col-xl-4 col-md-6 col-lg-4 col-sm-12">
+              <div className="col-12 col-xl-4 col-md-6 col-lg-4 col-sm-12 zoom-in">
                 <HorizontalCard
                   icon="account_balance"
                   title="Primary Account"
                   text={currency(Math.random() * 999999)}
                 />
               </div>
-              <div className="col-12 col-xl-4 col-md-6 col-lg-4 col-sm-12">
+              <div className="col-12 col-xl-4 col-md-6 col-lg-4 col-sm-12 zoom-in">
                 <HorizontalCard
                   icon="account_balance"
                   title="Current Account"
                   text={currency(Math.random() * 999999)}
                 />
               </div>
-              <div className="col-12 col-xl-4 col-md-6 col-lg-4 col-sm-12">
+              <div className="col-12 col-xl-4 col-md-6 col-lg-4 col-sm-12 zoom-in">
                 <HorizontalCard
                   icon="account_balance"
                   title="Savings Account"
@@ -403,7 +404,8 @@ export default function Home() {
             </div>
 
             {/* Second Row */}
-            <div className="row shadowed mt-5 gy-3 p-3 mh-100 overflow-auto">
+            <div className="row shadowed mt-5 gy-3 p-3 h-100 mh-100 overflow-hidden">
+              {/* Quick Transfer */}
               <div className="col-12 col-lg-6 d-flex flex-column py-3 h-100 mh-100 overflow-scroll">
                 <div className="fs-6 mx-auto mb-3">Quick Transfer</div>
 
@@ -509,25 +511,132 @@ export default function Home() {
                   </>
                 )}
 
-                <div className="mt-4 d-flex justify-content-center">
-                  <button className="w-75 shadowed p-2">Send</button>
+                <div className="mt-4 d-flex justify-content-center align-items-center">
+                  <button className="w-75 shadowed p-2 d-flex justify-content-center align-items-center">
+                    <span
+                      className={`material-symbols-outlined p-2`}
+                      role="button">
+                      send
+                    </span>
+                    <span>Transfer</span>
+                  </button>
                 </div>
               </div>
 
-              <div className="col shadowed d-flex flex-column p-3">
-                <span className="mx-auto">Recent Transactions</span>
+              {/* Recent Transactions */}
+              <div className="col shadowed d-flex flex-column justify-content-between p-3 h-100 mh-100 overflow-scroll">
+                <span className="mx-auto mb-3">Recent Transactions</span>
+                <span className="d-flex flex-column h-100 mh-100 overflow-scroll">
+                  <Transaction
+                    type="credit"
+                    amount={Math.ceil(Math.random() * 9999)}
+                    description={
+                      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, officia!"
+                    }
+                  />
+
+                  <hr />
+
+                  <Transaction
+                    type="debit"
+                    amount={Math.ceil(Math.random() * 9999)}
+                    description={
+                      "Molestias tenetur perspiciatis odio iste quam, dolores expedita. Delectus doloribus nisi porro."
+                    }
+                  />
+
+                  <hr />
+
+                  <Transaction
+                    type="credit"
+                    amount={Math.ceil(Math.random() * 9999)}
+                    description={
+                      "Molestias tenetur perspiciatis odio iste quam, dolores expedita. Delectus doloribus nisi porro."
+                    }
+                  />
+
+                  <hr />
+
+                  <Transaction
+                    type="debit"
+                    amount={Math.ceil(Math.random() * 9999)}
+                    description={
+                      "Molestias tenetur perspiciatis odio iste quam, dolores expedita. Delectus doloribus nisi porro."
+                    }
+                  />
+
+                  <hr />
+
+                  <Transaction
+                    type="debit"
+                    amount={Math.ceil(Math.random() * 9999)}
+                    description={
+                      "Molestias tenetur perspiciatis odio iste quam, dolores expedita. Delectus doloribus nisi porro."
+                    }
+                  />
+
+                  <hr />
+
+                  <Transaction
+                    type="credit"
+                    amount={Math.ceil(Math.random() * 9999)}
+                    description={
+                      "Molestias tenetur perspiciatis odio iste quam, dolores expedita. Delectus doloribus nisi porro."
+                    }
+                  />
+
+                  <hr />
+
+                  <Transaction
+                    type="debit"
+                    amount={Math.ceil(Math.random() * 9999)}
+                    description={
+                      "Molestias tenetur perspiciatis odio iste quam, dolores expedita. Delectus doloribus nisi porro."
+                    }
+                  />
+
+                  <hr />
+
+                  <Transaction
+                    type="credit"
+                    amount={Math.ceil(Math.random() * 9999)}
+                    description={
+                      "Molestias tenetur perspiciatis odio iste quam, dolores expedita. Delectus doloribus nisi porro."
+                    }
+                  />
+
+                  <hr />
+
+                  <Transaction
+                    type="credit"
+                    amount={Math.ceil(Math.random() * 9999)}
+                    description={
+                      "Molestias tenetur perspiciatis odio iste quam, dolores expedita. Delectus doloribus nisi porro."
+                    }
+                  />
+
+                  <hr />
+
+                  <Transaction
+                    type="debit"
+                    amount={Math.ceil(Math.random() * 9999)}
+                    description={
+                      "Molestias tenetur perspiciatis odio iste quam, dolores expedita. Delectus doloribus nisi porro."
+                    }
+                  />
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Right Side */}
-        <div className="col h-100 d-flex flex-column justify-content-between">
-          <div className="row h-100 p-3">
+        <div className="col d-flex flex-column justify-content-between p-3">
+          <div className="row p-2">
             <ExchangeWidget />
           </div>
 
-          <div className="row p-3 shadowed">
+          <div className="row p-3 shadowed flex-grow-1 align-items-center">
             <Bar options={options} data={data} />
           </div>
         </div>

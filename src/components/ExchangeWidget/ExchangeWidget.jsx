@@ -1829,7 +1829,7 @@ export default function ExchangeWidget() {
         </div>
 
         {/* Result */}
-        <div className="shadowed h-100 mt-5 d-flex flex-column justify-content-center align-items-center">
+        <div className="shadowed mt-5 d-flex flex-column justify-content-center align-items-center p-5">
           <span className="fw-bolder fs-4">
             1 {from} - {Math.ceil(Math.random() * 999)} {to}
           </span>
